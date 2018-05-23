@@ -1,9 +1,9 @@
-# ValidatorClient::Validator
+# ValidatorClient::InlineResponse404
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**validator_id** | **String** |  | 
-**description** | **String** |  | 
+**foo** | **String** |  | 
+**bar** | **String** |  | 
 
 

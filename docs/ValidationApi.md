@@ -1,4 +1,4 @@
-# Validator::ValidationApi
+# ValidatorClient::ValidationApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,13 +20,13 @@ Lists all of the available validator pipelines.
 # load the gem
 require 'inc-validator-client'
 
-api_instance = Validator::ValidationApi.new
+api_instance = ValidatorClient::ValidationApi.new
 
 begin
   #lists available validators
   result = api_instance.get_validators
   p result
-rescue Validator::ApiError => e
+rescue ValidatorClient::ApiError => e
   puts "Exception when calling ValidationApi->get_validators: #{e}"
 end
 ```
@@ -59,7 +59,7 @@ performs a validation
 # load the gem
 require 'inc-validator-client'
 
-api_instance = Validator::ValidationApi.new
+api_instance = ValidatorClient::ValidationApi.new
 
 validator_id = "validator_id_example" # String | An identifier for the validation to be performed. 
 
@@ -70,7 +70,7 @@ begin
   #performs a validation
   result = api_instance.validate(validator_id, metadata)
   p result
-rescue Validator::ApiError => e
+rescue ValidatorClient::ApiError => e
   puts "Exception when calling ValidationApi->validate: #{e}"
 end
 ```

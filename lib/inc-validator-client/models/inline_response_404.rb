@@ -14,52 +14,25 @@ require 'date'
 
 module ValidatorClient
 
-  class Status
-    # the subclass of `StatusMetadata`
-    attr_accessor :status
+  class InlineResponse404
+    attr_accessor :foo
 
-    # the component identifier (bean ID) of the component that created the `StatusMetadata` object 
-    attr_accessor :component_id
+    attr_accessor :bar
 
-    attr_accessor :message
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'status' => :'status',
-        :'component_id' => :'componentId',
-        :'message' => :'message'
+        :'foo' => :'foo',
+        :'bar' => :'bar'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'status' => :'String',
-        :'component_id' => :'String',
-        :'message' => :'String'
+        :'foo' => :'String',
+        :'bar' => :'String'
       }
     end
 
@@ -71,16 +44,12 @@ module ValidatorClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.has_key?(:'foo')
+        self.foo = attributes[:'foo']
       end
 
-      if attributes.has_key?(:'componentId')
-        self.component_id = attributes[:'componentId']
-      end
-
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
+      if attributes.has_key?(:'bar')
+        self.bar = attributes[:'bar']
       end
 
     end
@@ -89,16 +58,12 @@ module ValidatorClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @status.nil?
-        invalid_properties.push("invalid value for 'status', status cannot be nil.")
+      if @foo.nil?
+        invalid_properties.push("invalid value for 'foo', foo cannot be nil.")
       end
 
-      if @component_id.nil?
-        invalid_properties.push("invalid value for 'component_id', component_id cannot be nil.")
-      end
-
-      if @message.nil?
-        invalid_properties.push("invalid value for 'message', message cannot be nil.")
+      if @bar.nil?
+        invalid_properties.push("invalid value for 'bar', bar cannot be nil.")
       end
 
       return invalid_properties
@@ -107,22 +72,9 @@ module ValidatorClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @status.nil?
-      status_validator = EnumAttributeValidator.new('String', ["info", "warning", "error"])
-      return false unless status_validator.valid?(@status)
-      return false if @component_id.nil?
-      return false if @message.nil?
+      return false if @foo.nil?
+      return false if @bar.nil?
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["info", "warning", "error"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -130,9 +82,8 @@ module ValidatorClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          status == o.status &&
-          component_id == o.component_id &&
-          message == o.message
+          foo == o.foo &&
+          bar == o.bar
     end
 
     # @see the `==` method
@@ -144,7 +95,7 @@ module ValidatorClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, component_id, message].hash
+      [foo, bar].hash
     end
 
     # Builds the object from hash

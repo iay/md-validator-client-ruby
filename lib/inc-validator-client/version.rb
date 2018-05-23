@@ -10,6 +10,6 @@ Swagger Codegen version: 2.3.1
 
 =end
 
-module Validator
-  VERSION = "1.0.0"
+module ValidatorClient
+  VERSION = "1.0.1"
 end

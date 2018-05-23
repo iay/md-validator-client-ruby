@@ -17,7 +17,7 @@ require "inc-validator-client/version"
 
 Gem::Specification.new do |s|
   s.name        = "inc-validator-client"
-  s.version     = Validator::VERSION
+  s.version     = ValidatorClient::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ian Young"]
   s.email       = ["ian@iay.org.uk"]

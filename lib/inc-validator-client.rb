@@ -17,16 +17,17 @@ require 'inc-validator-client/version'
 require 'inc-validator-client/configuration'
 
 # Models
+require 'inc-validator-client/models/inline_response_404'
 require 'inc-validator-client/models/status'
 require 'inc-validator-client/models/validator'
 
 # APIs
 require 'inc-validator-client/api/validation_api'
 
-module Validator
+module ValidatorClient
   class << self
     # Customize default settings for the SDK using block.
-    #   Validator.configure do |config|
+    #   ValidatorClient.configure do |config|
     #     config.username = "xxx"
     #     config.password = "xxx"
     #   end

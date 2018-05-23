@@ -12,7 +12,7 @@ Swagger Codegen version: 2.3.1
 
 require 'date'
 
-module Validator
+module ValidatorClient
 
   class Validator
     attr_accessor :validator_id
@@ -155,7 +155,7 @@ module Validator
           end
         end
       else # model
-        temp_model = Validator.const_get(type).new
+        temp_model = ValidatorClient.const_get(type).new
         temp_model.build_from_hash(value)
       end
     end

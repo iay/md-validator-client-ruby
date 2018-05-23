@@ -17,7 +17,7 @@ require 'tempfile'
 require 'typhoeus'
 require 'uri'
 
-module Validator
+module ValidatorClient
   class ApiClient
     # The Configuration object holding settings to be used in the API client.
     attr_accessor :config
@@ -209,7 +209,7 @@ module Validator
         end
       else
         # models, e.g. Pet
-        Validator.const_get(return_type).new.tap do |model|
+        ValidatorClient.const_get(return_type).new.tap do |model|
           model.build_from_hash data
         end
       end

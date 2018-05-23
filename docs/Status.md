@@ -1,4 +1,4 @@
-# Validator::Status
+# ValidatorClient::Status
 
 ## Properties
 Name | Type | Description | Notes
