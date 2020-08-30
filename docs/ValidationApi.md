@@ -61,9 +61,9 @@ require 'md-validator-client'
 
 api_instance = ValidatorClient::ValidationApi.new
 
-validator_id = "validator_id_example" # String | An identifier for the validation to be performed. 
+validator_id = 'validator_id_example' # String | An identifier for the validation to be performed. 
 
-metadata = "metadata_example" # String | The metadata to be validated.
+metadata = 'metadata_example' # String | The metadata to be validated.
 
 
 begin
