@@ -11,18 +11,18 @@ Swagger Codegen version: 2.3.1
 =end
 
 # Common files
-require 'inc-validator-client/api_client'
-require 'inc-validator-client/api_error'
-require 'inc-validator-client/version'
-require 'inc-validator-client/configuration'
+require 'md-validator-client/api_client'
+require 'md-validator-client/api_error'
+require 'md-validator-client/version'
+require 'md-validator-client/configuration'
 
 # Models
-require 'inc-validator-client/models/inline_response_404'
-require 'inc-validator-client/models/status'
-require 'inc-validator-client/models/validator'
+require 'md-validator-client/models/inline_response_404'
+require 'md-validator-client/models/status'
+require 'md-validator-client/models/validator'
 
 # APIs
-require 'inc-validator-client/api/validation_api'
+require 'md-validator-client/api/validation_api'
 
 module ValidatorClient
   class << self

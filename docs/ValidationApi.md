@@ -18,7 +18,7 @@ Lists all of the available validator pipelines.
 ### Example
 ```ruby
 # load the gem
-require 'inc-validator-client'
+require 'md-validator-client'
 
 api_instance = ValidatorClient::ValidationApi.new
 
@@ -57,7 +57,7 @@ performs a validation
 ### Example
 ```ruby
 # load the gem
-require 'inc-validator-client'
+require 'md-validator-client'
 
 api_instance = ValidatorClient::ValidationApi.new
 
